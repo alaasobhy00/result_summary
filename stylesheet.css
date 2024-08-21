@@ -30,6 +30,12 @@ body{
     -o-border-radius: 30px;
 }
 
+@media (max-width:767px) {
+    .container{
+        flex-direction: row;
+    }
+}
+
 .container::before{
     content: "";
     width: 90%;
