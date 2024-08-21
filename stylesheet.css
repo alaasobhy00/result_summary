@@ -9,19 +9,25 @@
 }
 
 body{
-    position: relative;
+    position: absolute;
     font-family:"Hanken Grotesk", sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    -webkit-transform: translate(-50% , -50%);
+    -moz-transform: translate(-50% , -50%);
+    -ms-transform: translate(-50% , -50%);
+    -o-transform: translate(-50% , -50%);
 }
 
 
 .container{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
     width: 600px;
     height: 350px;
     background-color:white;
-    margin-top:15% ;
-    margin-inline: auto;
     position: relative;
     border-radius: 30px;
     -webkit-border-radius: 30px;
@@ -31,8 +37,22 @@ body{
 }
 
 @media (max-width:767px) {
+    
     .container{
-        flex-direction: row;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .container::before{
+        display: none;
+    }
+    .container .your-result{
+    padding-top: 200px;
+    margin-top: -200px;
+    padding-bottom:20px ;
+    width:100%;
+    }
+    .container .summary{
+        width:100%;
     }
 }
 
@@ -43,6 +63,11 @@ body{
     position: absolute;
     z-index: -1;
     box-shadow: 18px 4px 20px 0px #a6addf;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
 }
 
 .container .your-result{
@@ -56,6 +81,7 @@ body{
     color:white;
     text-align: center;
     width: 50%;
+    max-width: 60%;
 }
 
 .container .your-result h1 { 
